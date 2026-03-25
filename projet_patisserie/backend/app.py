@@ -55,15 +55,15 @@ def init_db():
     c.execute("SELECT COUNT(*) FROM products")
     if c.fetchone()[0] == 0:
         defaults = [
-            ("Tarte aux Fraises",     32,  "Pâte sablée dorée, crème pâtissière vanille et fraises fraîches.",           "https://i.pinimg.com/736x/4a/2c/ce/4a2cced70fd06dd6ce9eb9727f58d103.jpg", "tartes"),
-            ("Éclair au Chocolat",   6.5,  "Pâte à choux légère, ganache chocolat noir 70%.",                            "https://i.pinimg.com/736x/81/e1/9e/81e19e9417a160c2b914fae54cdbaac5.jpg", "gâteaux"),
-            ("Macaron Framboise",    3.5,  "Coques moelleuses, ganache crémeuse et fruit frais.",                        "https://i.pinimg.com/1200x/8f/1d/74/8f1d74387eee8b9d36636d6065e6b9c3.jpg","cookies"),
-            ("Mille-Feuille Vanille", 8,   "Feuilletage caramélisé, crème diplomate vanille.",                           "https://i.pinimg.com/736x/30/1a/9d/301a9d508af1a959f055b3a5d3f583e7.jpg", "desserts"),
-            ("Fondant Chocolat",      7,   "Cœur coulant au chocolat Valrhona.",                                         "https://i.pinimg.com/736x/fd/e4/75/fde4754d968d33518820dc8e61eb8920.jpg", "desserts"),
-            ("Cookie Noisette",      2.8,  "Moelleux aux noisettes et pépites de chocolat belge.",                      "https://i.pinimg.com/1200x/7a/7a/84/7a7a84e5710e6efa3ef741ef6e5181ea.jpg","cookies"),
-            ("Opéra Classique",      9.5,  "Joconde café, ganache chocolat et crème au beurre moka, l'iconique.",       "https://i.pinimg.com/1200x/5b/14/bb/5b14bb3919ad3ea1727f152305f0d11c.jpg","gâteaux"),
-            ("Paris-Brest",           11,  "Couronne de choux croustillants, crème pralinée aux noisettes torréfiées.", "https://i.pinimg.com/736x/84/10/32/841032f2bada8943364dba173d938dce.jpg", "gâteaux"),
-            ("Tarte Citron Meringuée",8.5, "Lemon curd acidulé, meringue italienne grillée, pâte sucrée croustillante.","https://i.pinimg.com/1200x/e1/1e/d5/e11ed58e0003008e3e6c2876b4c4b2c8.jpg","tartes"),
+            ("Tarte aux Fraises",     25,  "Pâte sablée croustillante garnie de crème pâtissière et de fraises fraîches.",           "https://i.pinimg.com/736x/4a/2c/ce/4a2cced70fd06dd6ce9eb9727f58d103.jpg", "tartes"),
+            ("Éclair au Chocolat",   12,  "Pâte à choux légère, fourrée de crème au chocolat et nappée de glaçage.",                            "https://i.pinimg.com/736x/81/e1/9e/81e19e9417a160c2b914fae54cdbaac5.jpg", "gâteaux"),
+            ("Macaron Framboise",    10,  "Coques croustillantes et fondantes, garnies d’une crème à la framboise.",                        "https://i.pinimg.com/1200x/8f/1d/74/8f1d74387eee8b9d36636d6065e6b9c3.jpg","cookies"),
+            ("Mille-Feuille Vanille", 20,   "Feuilletage croustillant alterné avec une crème vanille onctueuse.",                           "https://i.pinimg.com/736x/30/1a/9d/301a9d508af1a959f055b3a5d3f583e7.jpg", "desserts"),
+            ("Fondant Chocolat",      18,   "Gâteau au chocolat avec un cœur fondant et intense.",                                         "https://i.pinimg.com/736x/fd/e4/75/fde4754d968d33518820dc8e61eb8920.jpg", "desserts"),
+            ("Cookie Noisette",      8,  "Biscuit moelleux aux éclats de noisettes et pépites de chocolat.",                      "https://i.pinimg.com/1200x/7a/7a/84/7a7a84e5710e6efa3ef741ef6e5181ea.jpg","cookies"),
+            ("Opéra Classique",      22,  "Gâteau fin au café et chocolat, composé de couches de biscuit et de crème.",       "https://i.pinimg.com/1200x/5b/14/bb/5b14bb3919ad3ea1727f152305f0d11c.jpg","gâteaux"),
+            ("Paris-Brest",           20,  "Pâte à choux en couronne garnie de crème pralinée aux amandes/noisettes.", "https://i.pinimg.com/736x/84/10/32/841032f2bada8943364dba173d938dce.jpg", "gâteaux"),
+            ("Tarte Citron Meringuée",23, "Tarte au citron acidulée recouverte d’une meringue légère et dorée.","https://i.pinimg.com/1200x/e1/1e/d5/e11ed58e0003008e3e6c2876b4c4b2c8.jpg","tartes"),
         ]
         c.executemany(
             "INSERT INTO products (name, price, description, image, category) VALUES (?,?,?,?,?)",
