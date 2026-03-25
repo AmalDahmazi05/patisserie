@@ -1,4 +1,4 @@
-# La Belle Miette – Pâtisserie en Ligne
+# Fleur de Sucre – Pâtisserie en Ligne
 
 Application web complète pour une pâtisserie artisanale avec commande en ligne.
 
