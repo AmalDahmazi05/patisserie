@@ -7,7 +7,7 @@ Application web complète pour une pâtisserie artisanale avec commande en ligne
 ```
 patisserie/
 ├── frontend/
-│   └── index.html          # Application SPA (tout-en-un)
+│   └── index.html          # Application SPA
 └── backend/
     ├── app.py              # Serveur Flask (API REST)
     ├── requirements.txt    # Dépendances Python
