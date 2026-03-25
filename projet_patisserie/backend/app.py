@@ -196,7 +196,7 @@ def admin_login():
     d = request.json or {}
     if d.get("username") == ADMIN_USER and d.get("password") == ADMIN_PASS:
         return jsonify({"ok": True})
-    return jsonify({"error": "Identifiants incorrects"}), 401
+    return jsonify({"error": "Identifiant ou mot de passe incorrect"}), 401
 
 # ── Démarrage ─────────────────────────────────────────────────────────────────
 
