@@ -1,8 +1,8 @@
-# 🍰 La Belle Miette – Pâtisserie en Ligne
+# La Belle Miette – Pâtisserie en Ligne
 
 Application web complète pour une pâtisserie artisanale avec commande en ligne.
 
-## 📁 Structure du projet
+## Structure du projet
 
 ```
 patisserie/
@@ -18,7 +18,7 @@ patisserie/
 
 ---
 
-## 🚀 Lancer en local
+## Lancer en local
 
 ### Étape 1 – Installer les dépendances Python
 
@@ -45,7 +45,7 @@ La base de données SQLite est créée automatiquement au premier démarrage.
 
 ---
 
-## ☁️ Déploiement Azure
+## Déploiement Azure
 
 L'application est configurée pour Azure App Service.
 
@@ -55,7 +55,7 @@ L'application est configurée pour Azure App Service.
 
 ---
 
-## 🔑 Accès Admin
+## Accès Admin
 
 | Champ        | Valeur          |
 |--------------|-----------------|
@@ -66,7 +66,7 @@ Clique sur **Admin** dans la navigation.
 
 ---
 
-## 🌐 API Endpoints
+## API Endpoints
 
 | Méthode | URL               | Description                  | Auth |
 |---------|-------------------|------------------------------|------|
@@ -81,28 +81,28 @@ Clique sur **Admin** dans la navigation.
 
 ---
 
-## ✨ Fonctionnalités
+## Fonctionnalités
 
 ### Frontend
-- ✅ Page d'accueil avec héro, galerie et fonctionnalités
-- ✅ Menu complet avec filtres par catégorie
-- ✅ Panier (ajouter, supprimer, modifier quantités)
-- ✅ Formulaire de commande avec validation
-- ✅ Page de confirmation
-- ✅ Interface admin avec login
-- ✅ Dashboard admin (produits + commandes)
-- ✅ Design responsive (mobile, tablette, desktop)
+- Page d'accueil avec héro, galerie et fonctionnalités
+- Menu complet avec filtres par catégorie
+- Panier (ajouter, supprimer, modifier quantités)
+- Formulaire de commande avec validation
+- Page de confirmation
+- Interface admin avec login
+- Dashboard admin (produits + commandes)
+- Design responsive (mobile, tablette, desktop)
 
 ### Backend
-- ✅ API REST avec Flask
-- ✅ Base de données SQLite (persistante)
-- ✅ Validation des données côté serveur
-- ✅ CORS configuré
-- ✅ Servi par Gunicorn en production
+- API REST avec Flask
+- Base de données SQLite (persistante)
+- Validation des données côté serveur
+- CORS configuré
+- Servi par Gunicorn en production
 
 ---
 
-## 📦 Technologies utilisées
+## Technologies utilisées
 
 | Couche   | Technologie                     |
 |----------|---------------------------------|
@@ -112,3 +112,6 @@ Clique sur **Admin** dans la navigation.
 | Serveur  | Gunicorn (production)           |
 | Polices  | Google Fonts (Playfair Display) |
 
+## Réalisées par :
+Manal Touhami
+Amal Dahmazi
