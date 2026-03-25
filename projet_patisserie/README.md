@@ -113,5 +113,5 @@ Clique sur **Admin** dans la navigation.
 | Polices  | Google Fonts (Playfair Display) |
 
 ## Réalisées par :
-Manal Touhami
-Amal Dahmazi
+- Manal Touhami 
+- Amal Dahmazi
