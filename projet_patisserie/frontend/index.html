@@ -245,7 +245,7 @@ footer strong{color:var(--gold);font-family:var(--ff-display);font-style:italic}
   <div class="section-title"><h2>Nos Créations Vedettes</h2><p>Les préférées de nos clients</p><div class="section-divider"></div></div>
   <div class="featured-grid" id="featuredGrid"></div>
   <div class="see-all-wrap"><button class="btn-primary" onclick="showPage('menu')">Voir tout le menu →</button></div>
-  <footer><strong>Fleur de Sucre</strong> — Pâtisserie Artisanale<br>12 Rue des Fars, 75001 Nador · 📞 06 00 00 00 00<br><small>© 2026 Tous droits réservés</small></footer>
+  <footer><strong>Fleur de Sucre</strong> — Pâtisserie Artisanale<br>8 Rue des Fleurs, Centre-ville, Nador · 📞 +212 612345678 <br><small>© 2026 Tous droits réservés</small></footer>
 </div>
 
 <!-- MENU -->
@@ -385,7 +385,7 @@ footer strong{color:var(--gold);font-family:var(--ff-display);font-style:italic}
     <div class="form-grid" style="gap:.9rem">
       <div class="form-group"><label>Nom</label><input type="text" id="mName"/></div>
       <div class="form-grid two-col">
-        <div class="form-group"><label>Prix (€)</label><input type="number" id="mPrice" step="0.5"/></div>
+        <div class="form-group"><label>Prix (DH)</label><input type="number" id="mPrice" step="0.5"/></div>
         <div class="form-group"><label>Catégorie</label>
           <select class="form-select" id="mCat">
             <option value="gâteaux">Gâteaux</option><option value="tartes">Tartes</option>
@@ -624,13 +624,6 @@ async function adminLogin() {
   const password = document.getElementById('loginPass').value.trim();
   const errEl    = document.getElementById('loginError');
   errEl.classList.remove('show');
-
-  // Vérification locale — toujours fiable
-  if (username !== 'admin' || password !== 'patisserie123') {
-    errEl.textContent = 'Identifiant ou mot de passe incorrect.';
-    errEl.classList.add('show');
-    return;
-  }
 
   // Essayer de se connecter au backend (optionnel)
   try { await api('/admin/login', {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify({username,password})}, 2000); }
