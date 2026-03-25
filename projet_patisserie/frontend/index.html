@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>La Belle Miette – Pâtisserie Artisanale</title>
+<title>Fleur de Sucre – Pâtisserie Artisanale</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet"/>
 <style>
@@ -331,7 +331,7 @@ footer strong{color:var(--gold);font-family:var(--ff-display);font-style:italic}
         <div class="form-grid" style="gap:1rem">
           <div class="form-group"><label>Nom *</label><input type="text" id="pName" placeholder="Tarte aux fraises"/></div>
           <div class="form-grid two-col">
-            <div class="form-group"><label>Prix (€) *</label><input type="number" id="pPrice" placeholder="12.50" step="0.5" min="0"/></div>
+            <div class="form-group"><label>Prix (DH) *</label><input type="number" id="pPrice" placeholder="12.50" step="0.5" min="0"/></div>
             <div class="form-group"><label>Catégorie</label>
               <select class="form-select" id="pCat">
                 <option value="gâteaux">Gâteaux</option><option value="tartes">Tartes</option>
@@ -373,7 +373,7 @@ footer strong{color:var(--gold);font-family:var(--ff-display);font-style:italic}
   </div>
   <div class="cart-items" id="cartItems"></div>
   <div class="drawer-footer">
-    <div class="cart-total"><span>Total</span><span class="cart-total-price" id="cartTotal">0,00 €</span></div>
+    <div class="cart-total"><span>Total</span><span class="cart-total-price" id="cartTotal">0,00 DH</span></div>
     <button class="checkout-btn" onclick="goCheckout()">Passer la commande →</button>
   </div>
 </div>
@@ -413,15 +413,15 @@ const API = (window.location.hostname === 'localhost' || window.location.hostnam
   : window.location.origin + '/api';
 
 const DEMO = [
-  {id:1,name:"Tarte aux Fraises",price:32,description:"Pâte sablée dorée, crème pâtissière vanille et fraises fraîches de saison.",image:"https://i.pinimg.com/736x/4a/2c/ce/4a2cced70fd06dd6ce9eb9727f58d103.jpg",category:"tartes"},
-  {id:2,name:"Éclair au Chocolat",price:6.5,description:"Pâte à choux légère, ganache chocolat noir 70% et glaçage brillant.",image:"https://i.pinimg.com/736x/81/e1/9e/81e19e9417a160c2b914fae54cdbaac5.jpg",category:"gâteaux"},
-  {id:3,name:"Macaron Framboise",price:3.5,description:"Coques moelleuses à la framboise, ganache crémeuse et fruit frais.",image:"https://i.pinimg.com/1200x/8f/1d/74/8f1d74387eee8b9d36636d6065e6b9c3.jpg",category:"cookies"},
-  {id:4,name:"Mille-Feuille Vanille",price:8,description:"Feuilletage caramélisé, crème diplomate vanille Bourbon et fondant.",image:"https://i.pinimg.com/736x/30/1a/9d/301a9d508af1a959f055b3a5d3f583e7.jpg",category:"desserts"},
-  {id:5,name:"Fondant Chocolat",price:7,description:"Cœur coulant au chocolat Valrhona, servi tiède avec coulis de caramel.",image:"https://i.pinimg.com/736x/fd/e4/75/fde4754d968d33518820dc8e61eb8920.jpg",category:"desserts"},
-  {id:6,name:"Cookie Noisette",price:2.8,description:"Cookies moelleux aux noisettes caramélisées et pépites de chocolat belge.",image:"https://i.pinimg.com/1200x/7a/7a/84/7a7a84e5710e6efa3ef741ef6e5181ea.jpg",category:"cookies"},
-  {id:7,name:"Opéra Classique",price:9.5,description:"Joconde café, ganache chocolat et crème au beurre moka, l'iconique.",image:"https://i.pinimg.com/1200x/5b/14/bb/5b14bb3919ad3ea1727f152305f0d11c.jpg",category:"gâteaux"},
-  {id:8,name:"Paris-Brest",price:11,description:"Couronne de choux croustillants, crème pralinée aux noisettes torréfiées.",image:"https://i.pinimg.com/736x/84/10/32/841032f2bada8943364dba173d938dce.jpg",category:"gâteaux"},
-  {id:9,name:"Tarte Citron Meringuée",price:8.5,description:"Lemon curd acidulé, meringue italienne grillée, pâte sucrée croustillante.",image:"https://i.pinimg.com/1200x/e1/1e/d5/e11ed58e0003008e3e6c2876b4c4b2c8.jpg",category:"tartes"},
+  {id:1,name:"Tarte aux Fraises",price:25,description:"Pâte sablée croustillante garnie de crème pâtissière et de fraises fraîches.",image:"https://i.pinimg.com/736x/4a/2c/ce/4a2cced70fd06dd6ce9eb9727f58d103.jpg",category:"tartes"},
+  {id:2,name:"Éclair au Chocolat",price:12,description:"Pâte à choux légère, fourrée de crème au chocolat et nappée de glaçage.",image:"https://i.pinimg.com/736x/81/e1/9e/81e19e9417a160c2b914fae54cdbaac5.jpg",category:"gâteaux"},
+  {id:3,name:"Macaron Framboise",price:10,description:"Coques croustillantes et fondantes, garnies d’une crème à la framboise.",image:"https://i.pinimg.com/1200x/8f/1d/74/8f1d74387eee8b9d36636d6065e6b9c3.jpg",category:"cookies"},
+  {id:4,name:"Mille-Feuille Vanille",price:20,description:"Feuilletage croustillant alterné avec une crème vanille onctueuse.",image:"https://i.pinimg.com/736x/30/1a/9d/301a9d508af1a959f055b3a5d3f583e7.jpg",category:"desserts"},
+  {id:5,name:"Fondant Chocolat",price:18,description:"Gâteau au chocolat avec un cœur fondant et intense.",image:"https://i.pinimg.com/736x/fd/e4/75/fde4754d968d33518820dc8e61eb8920.jpg",category:"desserts"},
+  {id:6,name:"Cookie Noisette",price:8,description:"Biscuit moelleux aux éclats de noisettes et pépites de chocolat.",image:"https://i.pinimg.com/1200x/7a/7a/84/7a7a84e5710e6efa3ef741ef6e5181ea.jpg",category:"cookies"},
+  {id:7,name:"Opéra Classique",price:22,description:"Gâteau fin au café et chocolat, composé de couches de biscuit et de crème.",image:"https://i.pinimg.com/1200x/5b/14/bb/5b14bb3919ad3ea1727f152305f0d11c.jpg",category:"gâteaux"},
+  {id:8,name:"Paris-Brest",price:20,description:"Pâte à choux en couronne garnie de crème pralinée aux amandes/noisettes.",image:"https://i.pinimg.com/736x/84/10/32/841032f2bada8943364dba173d938dce.jpg",category:"gâteaux"},
+  {id:9,name:"Tarte Citron Meringuée",price:23,description:"Tarte au citron acidulée recouverte d’une meringue légère et dorée.",image:"https://i.pinimg.com/1200x/e1/1e/d5/e11ed58e0003008e3e6c2876b4c4b2c8.jpg",category:"tartes"},
 ];
 
 let products = [];
@@ -486,7 +486,7 @@ function cardHTML(p) {
       <div class="card-name">${p.name}</div>
       <div class="card-desc">${p.description}</div>
       <div class="card-footer">
-        <span class="card-price">${p.price.toFixed(2)} €</span>
+        <span class="card-price">${p.price.toFixed(2)} DH</span>
         <button class="add-btn" onclick="addToCart(${p.id})">+</button>
       </div>
     </div>
@@ -546,7 +546,7 @@ function renderCart() {
   const c = document.getElementById('cartItems');
   if (!cart.length) {
     c.innerHTML = `<div class="cart-empty"><div class="cart-empty-icon">🍰</div><p>Panier vide</p><button class="btn-primary" style="margin-top:.5rem" onclick="closeCart();showPage('menu')">Voir le menu</button></div>`;
-    document.getElementById('cartTotal').textContent = '0,00 €';
+    document.getElementById('cartTotal').textContent = '0,00 DH';
     return;
   }
   c.innerHTML = cart.map(i => `
@@ -554,7 +554,7 @@ function renderCart() {
       <img class="cart-item-img" src="${i.image}" alt="${i.name}" onerror="this.src='https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=200'"/>
       <div class="cart-item-info">
         <h4>${i.name}</h4>
-        <div class="cart-item-price">${(i.price*i.qty).toFixed(2)} €</div>
+        <div class="cart-item-price">${(i.price*i.qty).toFixed(2)} DH</div>
         <div class="qty-ctrl">
           <button class="qty-btn" onclick="changeQty(${i.id},-1)">−</button>
           <span class="qty-num">${i.qty}</span>
@@ -564,7 +564,7 @@ function renderCart() {
       <button class="remove-item" onclick="removeFromCart(${i.id})">✕</button>
     </div>`).join('');
   document.getElementById('cartTotal').textContent =
-    cart.reduce((s,i) => s+i.price*i.qty, 0).toFixed(2).replace('.',',') + ' €';
+    cart.reduce((s,i) => s+i.price*i.qty, 0).toFixed(2).replace('.',',') + ' DH';
 }
 function goCheckout() { closeCart(); showPage('order'); }
 
@@ -577,8 +577,8 @@ function renderOrderSummary() {
   }
   const total = cart.reduce((s,i)=>s+i.price*i.qty,0);
   el.innerHTML = cart.map(i =>
-    `<div class="order-sum-item"><span>${i.name} × ${i.qty}</span><span style="color:var(--caramel);font-weight:500">${(i.price*i.qty).toFixed(2)} €</span></div>`
-  ).join('') + `<div class="order-sum-total"><span>Total</span><strong>${total.toFixed(2)} €</strong></div>`;
+    `<div class="order-sum-item"><span>${i.name} × ${i.qty}</span><span style="color:var(--caramel);font-weight:500">${(i.price*i.qty).toFixed(2)} DH</span></div>`
+  ).join('') + `<div class="order-sum-total"><span>Total</span><strong>${total.toFixed(2)} DH</strong></div>`;
 }
 
 async function submitOrder() {
@@ -607,7 +607,7 @@ async function submitOrder() {
     <p>👤 <strong>${name}</strong></p>
     <p>📞 <strong>${phone}</strong></p>
     <p>📍 <strong>${address}</strong></p>
-    <p>💰 Total : <strong>${total.toFixed(2)} €</strong></p>`;
+    <p>💰 Total : <strong>${total.toFixed(2)} DH</strong></p>`;
   cart = []; saveCart();
   ['fname','fphone','faddress','fnote'].forEach(id => document.getElementById(id).value = '');
   showPage('confirm');
@@ -666,7 +666,7 @@ function renderAdminProducts() {
       <img class="admin-card-img" src="${p.image}" alt="${p.name}" onerror="this.src='https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500'"/>
       <div class="admin-card-body">
         <div class="admin-card-name">${p.name}</div>
-        <div class="admin-card-price">${p.price.toFixed(2)} €</div>
+        <div class="admin-card-price">${p.price.toFixed(2)} DH</div>
         <div class="admin-card-actions">
           <button class="btn-edit" onclick="openEditModal(${p.id})">✏️ Modifier</button>
           <button class="btn-del"  onclick="delProduct(${p.id})">🗑 Supprimer</button>
@@ -750,7 +750,7 @@ async function loadAdminOrders() {
           <span style="font-size:.8rem;color:var(--muted)">📍 ${o.address}</span>
         </td>
         <td style="font-size:.82rem;color:var(--muted);max-width:200px">${items}</td>
-        <td><strong style="color:var(--caramel)">${(o.total||0).toFixed(2)} €</strong></td>
+        <td><strong style="color:var(--caramel)">${(o.total||0).toFixed(2)} DH</strong></td>
         <td style="font-size:.82rem;color:var(--muted)">${o.date||'—'}</td>
         <td>
           <select class="status-select" onchange="updateStatus(${o.id},this.value)">
