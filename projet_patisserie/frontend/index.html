@@ -625,15 +625,27 @@ async function adminLogin() {
   const errEl    = document.getElementById('loginError');
   errEl.classList.remove('show');
 
-  // Essayer de se connecter au backend (optionnel)
-  try { await api('/admin/login', {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify({username,password})}, 2000); }
-  catch { /* backend absent, on continue quand même */ }
+  try {
+    const r = await api('/admin/login', {method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({username, password})}, 3000);
+    const d = await r.json();
+    if (!r.ok) {
+      errEl.textContent = d.error || 'Identifiant ou mot de passe incorrect.';
+      errEl.classList.add('show');
+      return;
+    }
+  } catch {
+    errEl.textContent = 'Impossible de contacter le serveur.';
+    errEl.classList.add('show');
+    return;
+  }
 
   isAdmin = true;
   renderAdminPage();
   await fetchProducts();
   renderAdminProducts();
-  loadAdminOrders();   // charge les commandes directement au login
+  loadAdminOrders();
 }
 
 function adminLogout() {
