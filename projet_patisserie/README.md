@@ -8,12 +8,11 @@ Application web complète pour une pâtisserie artisanale avec commande en ligne
 patisserie/
 ├── frontend/
 │   └── index.html          # Application SPA
-└── backend/
-    ├── app.py              # Serveur Flask (API REST)
-    ├── requirements.txt    # Dépendances Python
-    ├── Procfile            # Configuration déploiement cloud
-    └── data/
-        └── patisserie.db   # Base de données SQLite (créée automatiquement)
+├── app.py              # Serveur Flask (API REST)
+├── requirements.txt    # Dépendances Python
+├── Procfile            # Configuration déploiement cloud
+└── data/
+    └── patisserie.db   # Base de données SQLite (créée automatiquement)
 ```
 
 ---
