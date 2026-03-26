@@ -203,9 +203,9 @@ def admin_login():
 init_db()
 
 if __name__ == "__main__":
-    print(f"\n📁 Base de données : {DB_PATH}")
+    print(f"\nBase de données : {DB_PATH}")
     conn = get_db()
     nb   = conn.execute("SELECT COUNT(*) FROM orders").fetchone()[0]
     conn.close()
-    print(f"✅ {nb} commande(s) dans la base\n")
+    print(f"{nb} commande(s) dans la base\n")
     app.run(debug=True, host="0.0.0.0", port=5000)
